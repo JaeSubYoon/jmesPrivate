@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <definition name=".pagesLoginLayout"            template="/WEB-INF/views/attr/template-login.jsp">
+        <put-attribute name="body" 	                    value=""/>
+    </definition>
+
+    <definition name=".tabsPageLayout"         	    template="/WEB-INF/views/attr/template-tabs.jsp">
+        <put-attribute name="header" 	        		value="/WEB-INF/views/attr/tabs/header.jsp"/>
+        <put-attribute name="body-default-script" 		value="/WEB-INF/views/attr/tabs/body-script.jsp"/>
+        <put-attribute name="body-menu" 	    		value="/WEB-INF/views/attr/tabs/body-menu.jsp"/>
+        <put-attribute name="bottom"	 	   			value="/WEB-INF/views/attr/tabs/bottom.jsp"/>
+    </definition>
+
+    <definition name="login/*.tiles"           	    extends=".pagesLoginLayout">
+        <put-attribute name="body"              	    value="/WEB-INF/views/login/{1}.jsp" />
+    </definition>
+
+    <definition name="tab/tabs.tiles"           	extends=".tabsPageLayout"></definition>
+
+    <definition name=".tabsSampleLayout"         	    template="/WEB-INF/views/attr/template-sample.jsp">
+        <put-attribute name="header" 	        		value="/WEB-INF/views/attr/sample/header.jsp"/>
+        <put-attribute name="body-default-script" 		value="/WEB-INF/views/attr/sample/body-script.jsp"/>
+        <put-attribute name="body-menu" 	    		value="/WEB-INF/views/attr/sample/body-menu.jsp"/>
+        <put-attribute name="bottom"	 	   			value="/WEB-INF/views/attr/sample/bottom.jsp"/>
+    </definition>
+
+    <definition name="sample/tabs.tiles"           	extends=".tabsSampleLayout"></definition>
+
+
+</tiles-definitions>
